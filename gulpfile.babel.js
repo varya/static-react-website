@@ -27,8 +27,7 @@ gulp.task('watch', ()=> {
   const assetsFullPath = `${srcPath}/${assetsPath}/`
   gulp.watch(`${srcPath}/${assetsPath}*.css`, ['css'])
   gulp.watch(`${srcPath}/${assetsPath}*.js`, ['js'])
-  gulp.watch(`${assetsFullPath}fonts/*`, ['static'])
-  gulp.watch(`${assetsFullPath}images/*`, ['static'])
+  gulp.watch(`${assetsFullPath}**/*.png`, ['static'])
   gulp.watch([`${srcPath}/*.js`, `${srcPath}/en/*.js`], ['html'])
 })
 
@@ -47,7 +46,7 @@ gulp.task('js', ()=> {
 gulp.task('static', ()=> {
   const { srcPath, distPath, assetsPath } = config
   const assetsFullPath = `${srcPath}/${assetsPath}/`
-  gulp.src([`${assetsFullPath}fonts/*`, `${assetsFullPath}images/*`], { base: assetsFullPath })
+  gulp.src([`${assetsFullPath}**/*.png`], { base: assetsFullPath })
     .pipe(gulp.dest(`${distPath}/${assetsPath}`))
 })
 
