@@ -1,12 +1,14 @@
 import React, { Component } from 'react'
 
+import Menu from './menu'
+
 export default class Header extends Component {
 
   render() {
 
-    const lang = this.props.lang || 'de'
-    const altPath = (lang === 'de' ? '/en/' : '/') + this.props.filename
-    const altLang = (lang === 'de' ? 'en' : 'de' )
+    const lang = this.props.lang || 'en'
+    const altPath = (lang === 'en' ? '/' : '/ru/') + this.props.pagename + '.html'
+    const altLang = (lang === 'en' ? 'ru' : 'en' )
 
     const words = {
       shop: {
@@ -33,13 +35,7 @@ export default class Header extends Component {
         </div>
       </div>
       <div id="menubar">
-        <ul id="menu">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="examples.html">Examples</a></li>
-          <li><a href="page.html">A Page</a></li>
-          <li><a href="another_page.html">Another Page</a></li>
-          <li className="selected"><a href="contact.html">Contact Us</a></li>
-        </ul>
+        <Menu {...this.props}/>
       </div>
     </div>
     </div>

@@ -131,6 +131,9 @@ ul#menu, ul#menu li
 ul#menu li
 { list-style: none;}
 
+ul#menu a.selected
+{ background: #822956; }
+
 ul#menu li a
 { letter-spacing: 0.1em;
   font: normal 100% arial, sans-serif;

@@ -9,7 +9,7 @@ export default class Contact extends Component {
     return (
       <html>
         <Head/>
-        <Body filename="contact.html">
+        <Body pagename="contact">
           <BodyPage title="Kontakt">
             Hello Murzik!
           </BodyPage>
